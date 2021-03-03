@@ -1,7 +1,12 @@
 package Study0303;
-
-public class ListApply {
-    public static void main(String[] args) {
-        System.out.println("This is the newest  test!");
+class Node{
+    int val;
+    Node next;
+    public Node(int val){
+        this.val = val;
+        this.next = null;
     }
+}
+public class ListApply {
+
 }
