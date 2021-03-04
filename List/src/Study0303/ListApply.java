@@ -49,7 +49,7 @@ public class ListApply {
                 return true;
             }
             cur = cur.next;
- 
+
         }
         return false;
     }
