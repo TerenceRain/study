@@ -6,17 +6,22 @@ class LinkedListIndexIsNUllException extends RuntimeException{
     }
 }
 
-class ListNode{
+class MyLinkedNode {
     int val;
-    ListNode next = null;
-    ListNode prev = null;
-    public ListNode(int val){
+    MyLinkedNode next = null;
+    MyLinkedNode prev = null;
+    public MyLinkedNode(int val){
         this.val = val;
+    }
+
+    @Override
+    public String toString(){
+        return "[" + val + "]";
     }
 }
 public class MyLinkedList {
-    private ListNode head;
-    private ListNode tail;
+    private MyLinkedNode head;
+    private MyLinkedNode tail;
     private int length = 0;
     public MyLinkedList(){
         head = null;
@@ -27,31 +32,31 @@ public class MyLinkedList {
     }
 
     public void addFirst(int val){//头插
-        ListNode newListNode = new ListNode(val);
+        MyLinkedNode newMyLinkedNode = new MyLinkedNode(val);
         if(head == null){//如果是空链表
-            head = newListNode;
-            tail = newListNode;
+            head = newMyLinkedNode;
+            tail = newMyLinkedNode;
             length++;
             return ;
         }
-        newListNode.next = head;
-        head.prev = newListNode;
-        head = newListNode;
+        newMyLinkedNode.next = head;
+        head.prev = newMyLinkedNode;
+        head = newMyLinkedNode;
         length++;
         return;
 
     }
 
     public void addLast(int val){
-        ListNode newListNode = new ListNode(val);
+        MyLinkedNode newMyLinkedNode = new MyLinkedNode(val);
         if(head == null){
-            head = newListNode;
-            tail = newListNode;
+            head = newMyLinkedNode;
+            tail = newMyLinkedNode;
             length++;
             return;
         }
-        tail.next = newListNode;
-        newListNode.prev = tail;
+        tail.next = newMyLinkedNode;
+        newMyLinkedNode.prev = tail;
         tail = tail.next;
         length++;
     }
@@ -66,16 +71,16 @@ public class MyLinkedList {
         if (index == length){//处理尾插
             addLast(val);
         }
-        ListNode newListNode = new ListNode(val);
-        ListNode nextNode = getNode(index);
+        MyLinkedNode newMyLinkedNode = new MyLinkedNode(val);
+        MyLinkedNode nextNode = getNode(index);
 
-        ListNode prevNode = nextNode.prev;
+        MyLinkedNode prevNode = nextNode.prev;
 
-        prevNode.next = newListNode;
-        newListNode.prev = prevNode;
+        prevNode.next = newMyLinkedNode;
+        newMyLinkedNode.prev = prevNode;
 
-        newListNode.next = nextNode;
-        nextNode.prev = newListNode;
+        newMyLinkedNode.next = nextNode;
+        nextNode.prev = newMyLinkedNode;
         length++;
 
     }
@@ -92,7 +97,7 @@ public class MyLinkedList {
 
         }
 
-        ListNode nextNode = head.next;//删除首节点
+        MyLinkedNode nextNode = head.next;//删除首节点
         nextNode.prev = null;
         head = nextNode;
         length--;
@@ -110,7 +115,7 @@ public class MyLinkedList {
 
         }
 
-        ListNode prevNode = tail.prev;
+        MyLinkedNode prevNode = tail.prev;
         prevNode.next = null;
         tail = prevNode;
         length--;
@@ -130,10 +135,10 @@ public class MyLinkedList {
             return;
         }
         //根据下标找到位置
-        ListNode toRemove = getNode(index);
+        MyLinkedNode toRemove = getNode(index);
         //记录前后节点
-        ListNode prevNode = toRemove.prev;
-        ListNode nextNode = toRemove.next;
+        MyLinkedNode prevNode = toRemove.prev;
+        MyLinkedNode nextNode = toRemove.next;
         //删除节点
         prevNode.next = prevNode;
         nextNode.prev = prevNode;
@@ -160,12 +165,12 @@ public class MyLinkedList {
         if(index < 0 || index >= length ){
             throw new LinkedListIndexIsNUllException("下标为空！");
         }
-        ListNode node = getNode(index);
+        MyLinkedNode node = getNode(index);
         node.val = value;
     }
 
     public int indexOf(int value) {//获得指定值的下标
-        ListNode cur = head;
+        MyLinkedNode cur = head;
         for (int i = 0; i < length; i++) {
             if(cur.val == value){
                 return i;
@@ -175,12 +180,12 @@ public class MyLinkedList {
         return -1;
     }
 
-    public ListNode  getNode(int index) {//根据下标找到节点
+    public MyLinkedNode getNode(int index) {//根据下标找到节点
         if (index < 0 || index >= length){
             throw new LinkedListIndexIsNUllException("下标为空！");
 
         }
-        ListNode cur = head;
+        MyLinkedNode cur = head;
         for (int i = 0; i < index; i++) {
             cur = cur.next;
         }
