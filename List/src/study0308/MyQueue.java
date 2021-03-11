@@ -1,9 +1,10 @@
 package study0308;
 
 
-
+import java.util.Stack;
 
 public class MyQueue {
+
     static class Node{
         int val;
         Node next;
