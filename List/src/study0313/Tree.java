@@ -45,7 +45,7 @@ public class Tree {
         if (root == null){
             return;
         }
-        System.out.println(root.val);
+        System.out.print(root.val);
         preOrder(root.left);
         preOrder(root.right);
     }
@@ -54,17 +54,17 @@ public class Tree {
         if (root == null){
             return;
         }
-        preOrder(root.left);
-        System.out.println(root.val);
-        preOrder(root.right);
+        midOrder(root.left);
+        System.out.print(root.val);
+        midOrder(root.right);
     }
     public static void lastOrder(TreeNode root){
         if (root == null){
             return;
         }
 
-        preOrder(root.left);
-        preOrder(root.right);
-        System.out.println(root.val);
+        lastOrder(root.left);
+        lastOrder(root.right);
+        System.out.print     (root.val);
     }
 }

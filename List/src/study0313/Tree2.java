@@ -68,8 +68,8 @@ public class Tree2 {
 
     public static void main(String[] args) {
         Node root = build();
-        preOrder(root);
+//        preOrder(root);
 //        inOrder(root);
-//        postOrder(root);
+        postOrder(root);
     }
 }
