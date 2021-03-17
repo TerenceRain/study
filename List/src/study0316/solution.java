@@ -69,7 +69,7 @@ public class solution {
 return true;
 
     }
-    public static void levelOrderTraversal(TreeNode root) {//实现层序遍历
+    public static void levelOrderTraversal(TreeNode root) {//实现
         if (root == null) {
             return;
         }
