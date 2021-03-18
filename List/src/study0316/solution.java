@@ -29,9 +29,9 @@ public class solution {
         a.left = b;
         a.right = c;
         b.left = d;
-//        c.left = e;
-//        e.left = g;
-//        e.right = f;
+        c.left = e;
+        e.left = g;
+        e.right = f;
 
         return a;
 
@@ -69,7 +69,7 @@ public class solution {
 return true;
 
     }
-    public static void levelOrderTraversal(TreeNode root) {//实现
+    public static void levelOrderTraversal(TreeNode root) {//实现层序遍历
         if (root == null) {
             return;
         }
@@ -125,8 +125,8 @@ return true;
 //        System.out.println(isSameTree(p, q));
 //        System.out.println(maxDepth(p));
 //            System.out.println(isBalanced(p));
-//            levelOrderTraversal(p);
-            System.out.println(isCompleteTree(p));
+            levelOrderTraversal(p);
+//            System.out.println(isCompleteTree(p));
         }
 
     }

@@ -33,7 +33,30 @@ public class solution {
         c.right = f;
         return a;
     }
+    public TreeNode Convert(TreeNode pRootOfTree) {
+        if (pRootOfTree == null){
+            return null;
+        }
+        if (pRootOfTree.left == null && pRootOfTree.right == null){
+            return pRootOfTree;
+        }
+        TreeNode leftHead = Convert(pRootOfTree.left);
+        TreeNode leftTail = leftHead;
+        while (leftTail != null && leftTail.right != null){
+            leftTail = leftTail.right;
+        }
+        if (leftHead != null){
+            leftTail.right = pRootOfTree;
+            pRootOfTree.left = leftTail;
+        }
 
+        TreeNode rightHead = Convert(pRootOfTree.right);
+        if (rightHead != null){
+            rightHead.left = pRootOfTree;
+            pRootOfTree.right = rightHead;
+        }
+        return leftHead != null ? leftHead : pRootOfTree;
+    }
     public static void main(String[] args) {
         TreeNode root = build();
     }
@@ -45,6 +68,20 @@ public class solution {
         find(root, p, q);
         return lca;
     }
+
+    private boolean find(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null){
+            return false;
+        }
+        int mid = (root == p || root == q) ? 1 : 0;
+        int left = find(root.left, p, q) ? 1 : 0;
+        int right = find(root.left, p, q) ? 1 : 0;
+        if (mid + left + right == 2){
+            lca = root;
+        }
+        return (left + right + mid) > 0;
+    }
+
     public List<List<Integer>> result = null;
     public List<List<Integer>> levelOrder(TreeNode root) {//分层遍历
         result = new ArrayList<List<Integer>>();

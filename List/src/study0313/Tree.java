@@ -36,8 +36,8 @@ public class Tree {
     public static void main(String[] args) {
         TreeNode root = creatTree();
 //        preOrder(root);
-//        midOrder(root);
-        lastOrder(root);
+//        inOrder(root);
+        postOrder(root);
     }
 
     //前序遍历
@@ -50,21 +50,21 @@ public class Tree {
         preOrder(root.right);
     }
     //中序遍历
-    public static void midOrder(TreeNode root){
+    public static void inOrder(TreeNode root){
         if (root == null){
             return;
         }
-        midOrder(root.left);
+        inOrder(root.left);
         System.out.print(root.val);
-        midOrder(root.right);
+        inOrder(root.right);
     }
-    public static void lastOrder(TreeNode root){
+    public static void postOrder(TreeNode root){
         if (root == null){
             return;
         }
 
-        lastOrder(root.left);
-        lastOrder(root.right);
+        postOrder(root.left);
+        postOrder(root.right);
         System.out.print     (root.val);
     }
 }
