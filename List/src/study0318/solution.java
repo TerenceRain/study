@@ -118,11 +118,12 @@ public class solution {
         if (!inorder.isEmpty()){
             return null;
         }
-        TreeNode root = new TreeNode(preorder[index]);
+        TreeNode root =  new TreeNode(preorder[index]);
         index++;
         int pos = inorder.indexOf(root.val);
         root.left = _buildTree(preorder, inorder.subList(0, pos));
         root.right = _buildTree(preorder, inorder.subList(pos + 1, inorder.size()));
         return root;
     }
+    
 }
