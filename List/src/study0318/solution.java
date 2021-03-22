@@ -125,5 +125,35 @@ public class solution {
         root.right = _buildTree(preorder, inorder.subList(pos + 1, inorder.size()));
         return root;
     }
-    //
+
+
+
+    public StringBuilder stringBuilder = null;
+    public String tree2str(TreeNode t){
+        stringBuilder = new StringBuilder();
+        if (t == null){
+            return "";
+        }
+        _tree2str(t);
+        stringBuilder.deleteCharAt(0);
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        return stringBuilder.toString();
+    }
+
+    private void _tree2str(TreeNode root) {
+        if (root == null){
+            return;
+        }
+        stringBuilder.append("(");
+        stringBuilder.append(root.val);
+        _tree2str(root.left);
+        if (root.left == null && root.right != null){
+            stringBuilder.append("()");
+        }
+        _tree2str(root.right);
+        stringBuilder.append(")");
+    }
+    public static void preOrderNoR(TreeNode root){
+        
+    }
 }
