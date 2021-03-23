@@ -1,7 +1,10 @@
 package study0318;
 
+import com.sun.xml.internal.ws.api.pipe.ServerTubeAssemblerContext;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class solution {
      static class TreeNode {
@@ -153,7 +156,65 @@ public class solution {
         _tree2str(root.right);
         stringBuilder.append(")");
     }
-    public static void preOrderNoR(TreeNode root){
-        
+
+
+    public static void preOrderNoR(TreeNode root){//非递归先序遍历
+        if (root == null){
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            TreeNode cur = stack.pop();
+            System.out.println(cur.val);
+            if (cur.right != null){
+                stack.push(cur.right);
+            }
+            if (cur.left != null){
+                stack.push(cur.left);
+            }
+        }
+    }
+
+    public static void inOrderNoR(TreeNode root){//非递归中序遍历
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while(true){
+            while (cur != null){
+                stack.push(cur);
+                cur = cur.left;
+            }
+            if (stack.isEmpty()){
+                break;
+            }
+            TreeNode top = stack.pop();
+            System.out.println(top.val);
+            cur = top.right;
+        }
+    }
+
+    public static void postOrderNoR(TreeNode root){
+        if (root == null){
+            Stack<TreeNode> stack = new Stack<>();
+            TreeNode cur = root;
+            TreeNode prev = null;
+            while(true){
+                while(cur != null){
+                    stack.push(cur);
+                    cur = cur.left;
+                }
+                if (stack.isEmpty()){
+                    break;
+                }
+                TreeNode top = stack.peek();
+                if (top.right == null || prev == top.right){
+                    System.out.println(top.val);
+                    stack.pop();
+                    prev = top;
+                }else {
+                    cur = top.right;
+                }
+            }
+        }
     }
 }
