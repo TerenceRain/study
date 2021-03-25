@@ -1,5 +1,7 @@
 package study0323;
 
+import com.sun.corba.se.impl.presentation.rmi.StubInvocationHandlerImpl;
+
 import javax.crypto.spec.PSource;
 import java.util.Arrays;
 
@@ -67,10 +69,140 @@ public class Sort {
     }
 
 
+    public static void heapSort(int[] arr){
+        creatHeap(arr);
+        int heapSize = arr.length;
+        for (int i = 0; i < arr.length; i ++){
+            swap(arr , 0, heapSize - 1);
+            heapSize --;
+            shiftDown(arr, heapSize, 0);
+        }
+    }
+
+    private static void creatHeap(int[] arr) {
+        for (int i = (arr.length - 1) / 2; i >= 0; i--){
+            shiftDown(arr, arr.length, i);
+        }
+    }
+
+    private static void shiftDown(int[] arr, int size, int index) {
+        int parent = index;
+        int child = 2 * parent + 1;
+        while(child < size){
+            if (child + 1 < size && arr[child + 1] >arr[child]) {
+                child = child + 1;
+            }
+            if (arr[parent] < arr[child]){
+                swap(arr, parent, child);
+            }else {
+                break;
+            }
+            parent = child;
+            child = 2 * parent + 1;
+        }
+
+    }
+
+    public  static void bubbleSort(int[] arr){
+        for (int i = 0; i < arr.length; i ++){
+            for (int j = arr.length - 1; j > i; j --){
+                if (arr[j - 1] > arr[j]){
+                    swap(arr, j - 1, j);
+                }
+            }
+        }
+
+    }
+   public static void quickSort(int[] arr){
+        _quickSort(arr, 0, arr.length - 1);
+
+   }
+
+    private static void _quickSort(int[] arr, int left, int right) {
+        if (left >= right){
+            return;
+        }
+        int index = partition(arr, left, right);
+        _quickSort(arr, left, index - 1);
+        _quickSort(arr, index + 1, right);
+    }
+    private static int partition(int[] arr, int left, int right) {
+        int i = left;
+        int j = right;
+        int index  = arr[left];
+        while(i < j){
+            while(i < j && arr[j] >= index){
+                j--;
+            }
+            while(i < j && arr[i] <= index){
+                i++;
+            }
+            swap(arr, i, j);
+        }
+        swap(arr, i, left);
+        return i;
+    }
+
+
+    public static void mergeSort(int[] arr){
+        _mergeSort(arr, 0, arr.length);
+    }
+
+    private static void _mergeSort(int[] arr, int left, int right) {
+        if (right - left <= 1){
+            return;
+        }
+        int mid = (left + right) / 2;
+        _mergeSort(arr, left, mid);
+        _mergeSort(arr, mid, right);
+
+        merge(arr, left, mid, right);
+
+    }
+
+    private static void merge(int[] arr, int left, int mid, int right) {
+        if (left >= right){
+            return;
+        }
+        int[] temp = new  int[right - left];
+        int tempIndex = 0;
+        int cur1 = left;
+        int cur2 = mid;
+        while(cur1 < mid && cur2 < right){
+            if (arr[cur1] <= arr[cur2]){
+                temp[tempIndex] = arr[cur1];
+                tempIndex++;
+                cur1++;
+            }else{
+                temp[tempIndex] = arr[cur2];
+                tempIndex++;
+                cur2++;
+            }
+        }
+        while(cur1 < mid){
+            temp[tempIndex] = arr[cur1];
+            tempIndex++;
+            cur1++;
+        }
+        while(cur2 < right){
+            temp[tempIndex] = arr[cur2];
+            tempIndex++;
+            cur2++;
+        }
+        for (int i = 0; i < temp.length; i++) {
+            arr[left + i] = temp[i];
+        }
+    }
+
     public static void main(String[] args) {
-        int[] arr = {6,4,9,8,3};
+        int[] arr = {9,5,2,7,3,6,8};
 //        System.out.println(Arrays.toString(insertSort(arr)));
 //        System.out.println(Arrays.toString(shellSort(arr)));
-        selectSort(arr);
+//        selectSort(arr);
+//        heapSort(arr);
+//        bubbleSort(arr);
+//        quickSort(arr);
+        mergeSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
