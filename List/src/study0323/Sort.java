@@ -103,17 +103,16 @@ public class Sort {
 
     }
 
-    public  static void bubbleSort(int[] arr){
-        for (int i = 0; i < arr.length; i ++){
-            for (int j = arr.length - 1; j > i; j --){
-                if (arr[j - 1] > arr[j]){
-                    swap(arr, j - 1, j);
+    public static void bubbleSort(int[] arr){//冒泡排序
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = arr.length - 1; j > i; j--) {
+                if (arr[j] < arr[j - 1]){
+                    swap(arr, j, i);
                 }
             }
         }
-
     }
-   public static void quickSort(int[] arr){
+   public static void quickSort(int[] arr){//快速排序
         _quickSort(arr, 0, arr.length - 1);
 
    }
@@ -146,7 +145,7 @@ public class Sort {
 
     public static void mergeSort(int[] arr){
         _mergeSort(arr, 0, arr.length);
-    }
+    }//归并排序
 
     private static void _mergeSort(int[] arr, int left, int right) {
         if (right - left <= 1){
@@ -200,9 +199,9 @@ public class Sort {
 //        System.out.println(Arrays.toString(shellSort(arr)));
 //        selectSort(arr);
 //        heapSort(arr);
-//        bubbleSort(arr);
+        bubbleSort(arr);
 //        quickSort(arr);
-        mergeSort(arr);
+//        mergeSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
