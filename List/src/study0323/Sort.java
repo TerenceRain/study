@@ -199,7 +199,7 @@ public class Sort {
 //        System.out.println(Arrays.toString(shellSort(arr)));
 //        selectSort(arr);
 //        heapSort(arr);
-        bubbleSort(arr);
+//        bubbleSort(arr);
 //        quickSort(arr);
 //        mergeSort(arr);
         System.out.println(Arrays.toString(arr));
