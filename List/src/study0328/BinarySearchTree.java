@@ -1,14 +1,11 @@
 package study0328;
-
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
-
 class BinarySearchNode{
     public int key;
     public int value;
     public BinarySearchNode left;
     public BinarySearchNode right;
 
-    public BinarySearchNode(int key, int value,) {
+    public BinarySearchNode(int key, int value) {
         this.key = key;
         this.value = value;
 
@@ -80,8 +77,34 @@ public class BinarySearchTree {
     private void removeNode(BinarySearchNode parent, BinarySearchNode cur) {
         if (cur.left == null){
             if (cur == root){
-                
+                root = cur.right;
+            }else if(cur == parent.right){
+                parent.right = cur.right;
+            }else if(cur == parent.left){
+                parent.left = cur.right;
             }
+        }else if(cur.right == null){
+            if (cur == root){
+                root = cur.right;
+            }else if(cur == parent.right){
+                parent.right = cur.left;
+            }else if(cur == parent.left){
+                parent.left = cur.left;
+            }
+        }else{
+                BinarySearchNode goat = cur.right;
+                BinarySearchNode goatParent = cur;
+                while(goat.left == null){
+                    goatParent = goat;
+                    goat = goat.left;
+                }
+                cur.key = goat.key;
+                cur.value = goat.value;
+                if(goat == goatParent.left){
+                    goatParent.left = goat.left;
+                }else{
+                    goatParent.right = goat.right;
+                }
         }
     }
 }
