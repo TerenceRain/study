@@ -71,16 +71,29 @@ public class HashMap {
 
     public Boolean remove(int key){
         int index = hashCode(key);
-
-       for ( HashNode cur = array[index]; cur != null; cur = cur.next){
-           HashNode parent = null;
-            if (cur.key == key) {
-                parent = cur;
-                parent.next = cur.next;
+        HashNode prev = array[index];
+        HashNode cur = prev.next;
+        while(cur != null){
+            if(cur.key == key){
+                prev.next = cur.next;
+                cur = prev.next;
                 return true;
             }
+                prev = prev.next;
+                cur = cur.next;
+
         }
         return false;
+
+//       for ( HashNode cur = array[index]; cur != null; cur = cur.next){
+////           HashNode parent = null;
+////            if (cur.key == key) {
+////                parent = cur;
+////                parent.next = cur.next;
+////                return true;
+////            }
+//        }
+
     }
 
     public static void main(String[] args) {
