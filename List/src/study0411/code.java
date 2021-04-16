@@ -44,12 +44,6 @@ public class code {
         System.out.println();
     }
 
-    public static int MoreThanHalfNum_Solution(int[] array) {
-        Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < array.length; i++) {
-            queue.offer(array[i]);
-        }
-    }
 }
 
 
