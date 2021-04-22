@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>用户登录</title>
@@ -21,7 +21,7 @@
         el:"#app",
         data:{
             username:"",
-            password:"",
+            password:""
         },
         methods:{
             login:function () {
@@ -30,7 +30,7 @@
                 //Content-Type : application/json,请求数据为json字符串（body）
                 axios.post("login2",{
                     username:vm.username,
-                    password: vm.password
+                    password:vm.password
                 }).then(function (resp) {
                     let json  = resp.data;
                     if(json.ok){
@@ -38,8 +38,9 @@
                     }else{
                         alert("错误码：" + json.code + "\n错误信息" + json.msg);
                     }
-                    console.log(resp)
+                    // console.log(resp)
                 }).catch(function (error) {
+                    console.error(error)
                     console.error(JSON.stringify(error))
                 })
             }

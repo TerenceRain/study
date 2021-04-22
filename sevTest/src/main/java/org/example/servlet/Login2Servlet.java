@@ -40,7 +40,7 @@ public class Login2Servlet  extends HttpServlet {
         PrintWriter pw = resp.getWriter();
         Map<String, Object> map = new HashMap<String, Object>();
         //2.根据请求数据执行业务
-        if("abc".equals(input.getUserName())&& "123".equals(input.getPassWord())){
+        if("abc".equals(input.getUsername())&& "123".equals(input.getPassword())){
             map.put("ok", true);//业务操作成功，有些接口需要返回业务数据
         }else{
             map.put("ok", false);//业务操作失败，错误码，错误信息
