@@ -4,16 +4,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.dao.ArticleDAO;
 import org.example.model.Article;
 import org.example.model.JSONResponse;
+import org.example.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet
+@WebServlet("/articleList")
 public class ArticleListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,9 +26,12 @@ public class ArticleListServlet extends HttpServlet {
         //业务：查询文章列表（简化版本：查所有文章）
         //数据库查询所有文章数据，返回
         try {
-            //TOdo 需要只查询当前用户的文章
-           //todo 只有这一行是业务代码，每个接口不同
-            List<Article> query = ArticleDAO.query(1);
+
+            HttpSession session = req.getSession(false);
+            User user = (User) session.getAttribute("user");
+
+            //todo 只有这一行是业务代码，每个接口不同
+            List<Article> query = ArticleDAO.query(user.getId());
            //业务处理成功：
             json.setSuccess(true);
            json.setData(query);
