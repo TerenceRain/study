@@ -3,6 +3,7 @@ package org.example.dao;
 import org.example.model.Article;
 import org.example.util.DBUtil;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,5 +50,111 @@ public class ArticleDAO {
     public static void main(String[] args) throws SQLException{
          List<Article> a = query(1);
         System.out.println(a);
+    }
+
+    public static int insert(Article a, Integer userId) throws SQLException {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try{
+            //1.获取数据库连接对象
+            c = DBUtil.getConnection();
+            //2.根据Connection+sql创建命令对象
+            String sql = "insert into article(title, content, user_id) values (?, ?, ?)";
+            ps = c.prepareStatement(sql);
+
+            //3.替换占位符的值，再执行sql
+            ps.setString(1, a.getTitle());
+            ps.setString(2,a.getContent());
+            ps.setInt(3,userId);
+
+            return ps.executeUpdate();
+//        }catch (Exception e){
+//            e.printStackTrace();
+        }finally {
+            DBUtil.close(c,ps);
+        }
+
+    }
+
+    public static Article queryById(int id) throws SQLException {
+        Connection c = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            //1.
+            c = DBUtil.getConnection();
+            //2.
+            String sql = "select * from article where id = ?";
+            ps = c.prepareStatement(sql);
+            //3.
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            //4.
+            Article a = null;
+            while(rs.next()){
+               a = new Article();
+               a.setId(id);
+               a.setTitle(rs.getString("title"));
+               a.setContent(rs.getString("content"));
+            }
+            return a;
+        }finally {
+            DBUtil.close(c,ps,rs);
+        }
+    }
+
+    public static int update(Article a) throws SQLException {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try{
+            //1.获取数据库连接对象
+            c = DBUtil.getConnection();
+            //2.根据Connection+sql创建命令对象
+            String sql = "update article set title = ?,content = ? where id = ?";
+            ps = c.prepareStatement(sql);
+
+            //3.替换占位符的值，再执行sql
+            ps.setString(1, a.getTitle());
+            ps.setString(2,a.getContent());
+            ps.setInt(3,a.getId());
+
+            return ps.executeUpdate();
+//        }catch (Exception e){
+//            e.printStackTrace();
+        }finally {
+            DBUtil.close(c,ps);
+        }
+    }
+
+    public static int delete(String[] ids) throws SQLException {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try{
+            //1.获取数据库连接对象
+            c = DBUtil.getConnection();
+            //2.根据Connection+sql创建命令对象
+            StringBuilder sql = new StringBuilder("delete from article where id in(");
+            //拼接带占位符的sql
+            for (int i = 0; i < ids.length; i++) {
+                if (i != 0){
+                    sql.append(",");
+                }
+                sql.append("?");
+            }
+            sql.append(")");
+            ps = c.prepareStatement(sql.toString());
+
+            //3.替换占位符的值，再执行sql
+            for (int i = 0; i < ids.length; i++) {
+                //数组索引从0开始，占位符替换的方法是从1开始
+                ps.setInt(i + 1, Integer.parseInt(ids[i]));
+            }
+
+            return ps.executeUpdate();
+//        }catch (Exception e){
+//            e.printStackTrace();
+        }finally {
+            DBUtil.close(c,ps);
+        }
     }
 }
