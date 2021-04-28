@@ -1,9 +1,12 @@
 package org.example.util;
 
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.model.JSONResponse;
 import org.example.model.User;
+
+import java.sql.SQLException;
 
 public class Main {
 
@@ -57,6 +60,8 @@ public class Main {
         }
         return u;
     }
+
+
 
     @Getter
     @Setter
