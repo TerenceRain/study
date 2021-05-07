@@ -63,7 +63,7 @@ public class Main extends X{
 
 
     public static void main(String[] args) {
-//        X x = new X();
+        X x = new X();
         Main main = new Main();
         Main main1 = new Main();
         System.out.println(main.equals(main1) + "" + main.name.equals(main1.name) );
