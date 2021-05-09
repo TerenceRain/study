@@ -24,4 +24,11 @@ public class Main {
 //        System.out.println(x);
 //
 //    }
+public class BinInsert {//二进制插入
+    public int binInsert(int n, int m, int j, int i) {
+        // write code here
+        m <<= j;
+        return m | n;
+    }
+}
 }
