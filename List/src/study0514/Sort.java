@@ -55,6 +55,49 @@ public class Sort {
             }
         }
     }
+
+    public static void heapSort(int[] arr){
+        creatHeap(arr);
+        int heapSize = arr.length;
+        for (int i = 0; i < arr.length; i++) {
+            swap(0, heapSize - 1, arr);
+            heapSize--;
+            shiftDown(arr, heapSize, 0);
+        }
+    }
+    public static void creatHeap(int[] arr){
+        for (int i = 0; i < (arr.length - 1 - 1) / 2; i++) {
+            shiftDown(arr, arr.length, i);
+        }
+    }
+    public static void shiftDown(int[] arr, int heapSize, int index){
+        int parent = index;
+        int child = 2 * parent + 1;
+        while(child < heapSize){
+            if(child + 1 < heapSize && arr[child + 1] > arr[child]) {
+                child = child + 1;
+            }
+            if (arr[parent] < arr[child]) {
+                swap(parent, child, arr);
+            }else{
+                break;
+            }
+            parent = child;
+            child = 2 * parent + 1;
+        }
+    }
+
+
+    public static void bubbleSort(int[] arr){
+        for(int bound = 0; bound < arr.length; bound++){
+            for(int cur = arr.length -1 ; cur > 0; cur--){
+                if(arr[cur - 1] > arr[cur]){
+                    swap(cur, cur - 1, arr);
+                }
+            }
+        }
+    }
+
     public static void swap(int cur, int bound, int[] arr){
         int temp = arr[cur];
         arr[cur] = arr[bound];
@@ -63,8 +106,10 @@ public class Sort {
 
     public static void main(String[] args) {
         int[] arr = {5,9,3,6,8,1,0};
-        selectSort(arr);
+//        selectSort(arr);
+//        heapSort(arr);
+        bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
-//s
+//
 }
