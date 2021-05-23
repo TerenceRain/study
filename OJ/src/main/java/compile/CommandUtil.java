@@ -10,7 +10,7 @@ public class CommandUtil {
 //    cmd表示要执行的命令
 //    stdoutFile指定标准输出写到哪个文件中
 //    stderrFile指定标准错误写到哪个文件中
-    public static int run(String cmd, String stdoutFile, String stderrFile) throws IOException {
+    public static int run(String cmd, String stdoutFile, String stderrFile) throws IOException, InterruptedException {
 //        可以使用多个Runtime进行进程的创建
 //        Runtime在使用的时候并不需要手动创建实例
 //        一个java程序里，Runtime的实例只有唯一一个
@@ -33,8 +33,36 @@ public class CommandUtil {
             stdoutFrom.close();
             stdoutTo.close();
         }
-//        return -1;
+//        再对标准错误进行重定向
+        if(stderrFile != null){
+//            getErrorStream得到的是标准错误
+            InputStream stderrFrom = process.getErrorStream();
+            FileOutputStream stderrTo = new FileOutputStream(stderrFile);
+            while(true){
+                int ch = stderrFrom.read();
+                if(ch == -1){
+                    break;
+                }
+                stderrTo.write(ch);
+            }
+            stderrFrom.close();
+            stderrTo.close();
+        }
+//        等待新进程结束，并获取到退出码
+        int exitCode = process.waitFor();
+        return  exitCode;
 
+
+    }
+
+    public static void main(String[] args) {
+        try {
+            int ret = CommandUtil.run("cmd", "./stdout.txt", "./stderr.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
