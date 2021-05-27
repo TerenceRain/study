@@ -28,9 +28,12 @@ public class Task {
         STDERR = WORK_DIR + "stderr.txt";
         COMPILE_ERROR = WORK_DIR + "compile_error.txt";
 
+
+    }
 //        question表示用户提交的代码
 //        Answer表示代码的编译运行结果
-        public Answer compileAndRun(Question question)
+    public Answer compileAndRun(Question question){
+
     }
 
     public static void main(String[] args) {
