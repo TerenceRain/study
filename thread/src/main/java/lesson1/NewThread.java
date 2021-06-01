@@ -8,7 +8,8 @@ public class NewThread {
                 System.out.println("abc");
             }
         };
-//        start是真正启动一个线程，和调用start方法所在的一个线程（main）
+//        start是真正启动一个线程，
+//        和调用start方法所在的一个线程（main）
 //        是并发并行执行
         thread.start();
 
