@@ -9,8 +9,8 @@ public class NewThread {
             }
         };
 //        start是真正启动一个线程，
-//        和调用start方法所在的一个线程（main）
-//        是并发并行执行
+//        和调用start方法所在的一个线程（main）是并发并行执行
+//        和调用start方法所在的一个线程（main）是并发并行执行
         thread.start();
 
 //        run这里是在main线程中的一个方法调用
