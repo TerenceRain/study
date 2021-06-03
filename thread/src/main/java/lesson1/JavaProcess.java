@@ -3,7 +3,8 @@ package lesson1;
 public class JavaProcess {
     public static void main(String[] args) {
         A a = new A(){
-//            匿名内部类，本质是A的子类
+//            匿名内部类，
+//            本质是A的子类
             @Override
             public void pro(){
                 System.out.println("abc");
