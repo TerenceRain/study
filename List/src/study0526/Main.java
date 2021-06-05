@@ -33,3 +33,19 @@ class Solution {
         return nums[i];
     }
 }
+
+class tion {
+    public String replaceSpace(String s) {
+        StringBuilder sb = new StringBuilder();
+        String[] str = s.split(" ");
+        for(int i = 0; i < str.length; i++){
+            while(i != str.length - 1){
+                sb.append(str[i]);
+                sb.append("%20");
+            }
+            sb.append(str[str.length - 1]);
+        }
+        return sb.toString();
+    }
+}
+
