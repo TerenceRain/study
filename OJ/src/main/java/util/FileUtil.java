@@ -6,31 +6,28 @@ import java.io.IOException;
 
 public class FileUtil {
     //    从指定的文件中一次拿所有的内容读出来
-    public static String readFile(String filePath) {
-        StringBuilder stringBuilder = new StringBuilder();
-        try (FileInputStream fileInputStream = new FileInputStream(filePath)) {
-            while (true) {
-                int ch = fileInputStream.read();
-                if (ch == -1) {
-                    break;
-                }
-                stringBuilder.append((char) ch);
+   public static String readFile(String filePath){
+       StringBuilder stringBuilder = new StringBuilder();
+       try(FileInputStream fileInputStream = new FileInputStream(filePath)){
+           while (true){
+               int ch = fileInputStream.read();
+               if(ch == -1){
+                   break;
+               }
+               stringBuilder.append((char) ch);
+           }
 
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+       }catch (IOException e){
+           e.printStackTrace();
+       }
+       return stringBuilder.toString();
+   }
 
-        }
-        return stringBuilder.toString();
-
-    }
-    public static void writeFile (String filePath, String content){
-        try(FileOutputStream fileOutputStream = new FileOutputStream(filePath)){
-            while(true){
-                fileOutputStream.write(content.getBytes());
-            }
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
+   public static void writeFile(String filePath, String content){
+       try(FileOutputStream fileOutputStream = new FileOutputStream(filePath)){
+           fileOutputStream.write(content.getBytes());
+       }catch (IOException e){
+           e.printStackTrace();
+       }
+   }
 }
