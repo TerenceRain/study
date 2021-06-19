@@ -69,9 +69,6 @@ public class ProblemDAO {
                 problem.setId(resultSet.getInt("id"));
                 problem.setTitle(resultSet.getString("title"));
                 problem.setLevel(resultSet.getString("level"));
-//                problem.setDescription(resultSet.getString("description"));
-//                problem.setTemplateCode(resultSet.getString("templateCode"));
-//                problem.setTestCode(resultSet.getString("testCode"));
                 problems.add(problem);
             }
         } catch (SQLException e) {

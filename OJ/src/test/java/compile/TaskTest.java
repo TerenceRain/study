@@ -11,7 +11,7 @@ public class TaskTest extends TestCase {
         question.setCode("public class Solution {\n" +
                 "    public static void main(String[] args) {\n" +
                 "        System.out.println(\"stdout\");\n" +
-                "        String s = null;\n" +
+                "        String s = \"abc\";\n" +
                 "        System.out.println(s.length());\n" +
                 "    }\n" +
                 "}\n");

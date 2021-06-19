@@ -91,7 +91,7 @@ public class problemDAOTest extends TestCase {
 
     public static void main(String[] args) {
 //        1.测试插入逻辑
-//        testInsert();
+        testInsert();
 //        2.测试删除逻辑
 //        testDelete();
 //        3.测试查找所有记录

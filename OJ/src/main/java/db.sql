@@ -1,4 +1,4 @@
-drop database if exists OnlineOJ;
+
 create database if not exists OnlineOJ;
 use OnlineOJ;
 drop table if exists oj_table;
