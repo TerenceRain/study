@@ -43,12 +43,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test001.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test001.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/study0615/test001.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="412">
+              <caret line="55" column="24" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,8 +58,8 @@
       <file leaf-file-name="ddtTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/study0615/ddtTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+            <state relative-caret-position="812">
+              <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -65,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_baidu_data.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_baidu_data.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/study0615/data/test_baidu_data.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="87">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -221,7 +223,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for ddtTest.testCase1">
+  <component name="RunManager" selected="Python tests.Unittests for test001.testCase1">
     <configuration name="Unittests for ddtTest.testCase1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -236,6 +238,20 @@
       <option name="_new_target" value="&quot;ddtTest.testCase1&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
+    <configuration name="Unittests for ddtTest.testCase1.test_baidu1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study0615" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="测试" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;ddtTest.testCase1.test_baidu1&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
     <configuration name="Unittests for study0615.ddtTest.testCase1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -248,20 +264,6 @@
       <module name="测试" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;study0615.ddtTest.testCase1&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
-    <configuration name="Unittests for study0615.ddtTest.testCase1.test_baidu1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study0615/resultReport" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="测试" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;study0615.ddtTest.testCase1.test_baidu1&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
     <configuration name="Unittests for study0615.ddt.testCase1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -308,18 +310,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddt.testCase1" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for test001.testCase1" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddtTest.testCase1.test_baidu1" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddtTest.testCase1" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for ddtTest.testCase1" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddtTest.testCase1" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for ddtTest.testCase1" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for ddtTest.testCase1.test_baidu1" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test001.testCase1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for ddtTest.testCase1" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddtTest.testCase1" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddt.testCase1" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddtTest.testCase1.test_baidu1" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test001.testCase1" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test001.testCase1" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for ddtTest.testCase1.test_baidu1" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for ddtTest.testCase1" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddtTest.testCase1" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for study0615.ddt.testCase1" />
       </list>
     </recent_temporary>
   </component>
@@ -337,20 +339,17 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_ddtTest_testCase1 - 2021.06.17 at 10h 30m 20s.xml">
+    <history-entry file="Unittests_for_ddtTest_testCase1 - 2021.06.21 at 23h 21m 34s.xml">
       <configuration name="Unittests for ddtTest.testCase1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_ddtTest_testCase1 - 2021.06.17 at 10h 33m 16s.xml">
-      <configuration name="Unittests for ddtTest.testCase1" configurationId="tests" />
+    <history-entry file="Unittests_for_ddtTest_testCase1_test_baidu1 - 2021.06.21 at 23h 21m 37s.xml">
+      <configuration name="Unittests for ddtTest.testCase1.test_baidu1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_ddtTest_testCase1 - 2021.06.17 at 10h 34m 09s.xml">
-      <configuration name="Unittests for ddtTest.testCase1" configurationId="tests" />
+    <history-entry file="Unittests_for_ddtTest_testCase1_test_baidu1 - 2021.06.21 at 23h 22m 15s.xml">
+      <configuration name="Unittests for ddtTest.testCase1.test_baidu1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_ddtTest_testCase1 - 2021.06.17 at 10h 35m 41s.xml">
-      <configuration name="Unittests for ddtTest.testCase1" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_study0615_ddtTest_testCase1 - 2021.06.16 at 18h 34m 39s.xml">
-      <configuration name="Unittests for study0615.ddtTest.testCase1" configurationId="tests" />
+    <history-entry file="Unittests_for_ddtTest_testCase1_test_baidu1 - 2021.06.21 at 23h 23m 17s.xml">
+      <configuration name="Unittests for ddtTest.testCase1.test_baidu1" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_for_study0615_ddtTest_testCase1 - 2021.06.16 at 18h 35m 41s.xml">
       <configuration name="Unittests for study0615.ddtTest.testCase1" configurationId="tests" />
@@ -366,6 +365,9 @@
     </history-entry>
     <history-entry file="Unittests_for_study0615_testDdt_testCase1 - 2021.06.16 at 18h 28m 51s.xml">
       <configuration name="Unittests for study0615.testDdt.testCase1" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test001_testCase1 - 2021.06.21 at 23h 25m 09s.xml">
+      <configuration name="Unittests for test001.testCase1" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -412,7 +414,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -522,7 +526,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="899">
           <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -657,7 +663,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-          <folding />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,14 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/study0615/test001.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/study0615/data/testdata2">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -746,21 +746,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/study0615/data/test_baidu_data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/study0615/ddtTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        <state relative-caret-position="812">
+          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/study0615/data/test_baidu_data.txt">
+    <entry file="file://$PROJECT_DIR$/study0615/test001.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="412">
+          <caret line="55" column="24" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
