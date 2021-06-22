@@ -25,4 +25,20 @@ public class Main{
         }
         return "Yes";
     }
+    public static int[] insertSort(int[] arr){
+        int bound = 1;
+        for (; bound < arr.length;bound ++) {
+            int v = arr[bound];
+            int cur = bound - 1;
+            for(; cur >= 0; cur--){
+                if(arr[cur + 1] > arr[cur]){
+                    arr[cur + 1] = arr[cur];
+                }else{
+                    break;
+                }
+            }
+            arr[cur] = v;
+
+        }
+    }
 }
