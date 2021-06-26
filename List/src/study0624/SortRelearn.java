@@ -45,8 +45,8 @@ public class SortRelearn {
     }
     public static void main(String[] args) {
         int[] arr = {9, 5, 8, 3, 7, 2};
-//        int[] out = insertSort(arr);
-        int[] out = shellSort(arr);
+        int[] out = insertSort(arr);
+//        int[] out = shellSort(arr);
         System.out.println(Arrays.toString(out));
     }
 }
