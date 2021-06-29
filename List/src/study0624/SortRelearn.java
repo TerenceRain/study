@@ -19,7 +19,6 @@ public class SortRelearn {
         }
         return arr;
     }
-
     public static int[] shellSort(int[] arr){
         int gap = arr.length / 2;
         while(gap >= 1){
@@ -30,10 +29,10 @@ public class SortRelearn {
     }
     public static void _shellSort(int[] arr, int gap){
         int bound = gap;
-        for(; bound < arr.length; bound++){
+        for(; bound < arr.length; bound ++){
             int v = arr[bound];
             int cur = bound - gap;
-            for(; cur >= 0; cur-= gap){
+            for(; cur >= 0; cur -= gap){
                 if(arr[cur] > v){
                     arr[cur + gap] = arr[cur];
                 }else{
@@ -44,29 +43,41 @@ public class SortRelearn {
         }
     }
 
-    public static int[] selectSort(int[] arr) {
+ public static int[] selectSort(int[] arr){
         int bound = 0;
-        for(; bound < arr.length; bound++){//这就是排序的趟数
+        for(; bound < arr.length; bound++){
             int cur = bound + 1;
-            for(; cur < arr.length; cur++){//内层循环就是打擂台的过程，遍历无序区间
-                if (arr[cur] < arr[bound]) {//如果有元素比擂主小，就和擂主交换位置
+            for(; cur < arr.length; cur++){
+                if(arr[cur] < arr[bound]){
                     swap(arr, cur, bound);
                 }
             }
         }
         return arr;
+ }
 
-    }
-    public static void swap(int[] arr, int x, int y) {
-        int tmp = arr[x];
-        arr[x] = arr[y];
-        arr[y] = tmp;
-    }
+ public static int[] bubbleSort(int[] arr){
+        for(int i = 0; i < arr.length; i++){
+            for(int j = arr.length - 1; j > i; j--){
+                if(arr[j - 1] > arr[j]){
+                    swap(arr, j - 1, j);
+                }
+            }
+        }
+        return arr;
+ }
+ public static void swap(int[] arr, int i, int j){
+     int temp = arr[i];
+     arr[i] = arr[j];
+     arr[j] = temp;
+ }
+
     public static void main(String[] args) {
         int[] arr = {9, 5, 8, 3, 7, 2};
 //        int[] out = insertSort(arr);
 //        int[] out = shellSort(arr);
-        int[] out = selectSort(arr);
+//        int[] out = selectSort(arr);
+        int[] out = bubbleSort(arr);
         System.out.println(Arrays.toString(out));
     }
 
