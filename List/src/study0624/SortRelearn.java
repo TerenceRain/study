@@ -19,17 +19,19 @@ public class SortRelearn {
         }
         return arr;
     }
+
     public static int[] shellSort(int[] arr){
         int gap = arr.length / 2;
         while(gap >= 1){
             _shellSort(arr, gap);
-            gap /= 2;
+            gap = gap / 2;
         }
         return arr;
     }
+
     public static void _shellSort(int[] arr, int gap){
         int bound = gap;
-        for(; bound < arr.length; bound ++){
+        for(; bound < arr.length; bound++){
             int v = arr[bound];
             int cur = bound - gap;
             for(; cur >= 0; cur -= gap){
@@ -49,7 +51,7 @@ public class SortRelearn {
             int cur = bound + 1;
             for(; cur < arr.length; cur++){
                 if(arr[cur] < arr[bound]){
-                    swap(arr, cur, bound);
+                    swap(arr, bound, cur);
                 }
             }
         }
@@ -57,14 +59,16 @@ public class SortRelearn {
  }
 
  public static int[] bubbleSort(int[] arr){
-        for(int i = 0; i < arr.length; i++){
-            for(int j = arr.length - 1; j > i; j--){
-                if(arr[j - 1] > arr[j]){
-                    swap(arr, j - 1, j);
-                }
-            }
-        }
-        return arr;
+     for (int i = 0; i < arr.length; i++) {
+         for (int j = arr.length - 1; j > i ; j--) {
+             if(arr[j - 1] > arr[j]){
+                 swap(arr, j - 1, j);
+             }
+
+         }
+
+     }
+     return arr;
  }
  public static void swap(int[] arr, int i, int j){
      int temp = arr[i];
