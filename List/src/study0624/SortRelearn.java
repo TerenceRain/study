@@ -1,6 +1,8 @@
 package study0624;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SortRelearn {
     public static int[] insertSort(int[] arr){
@@ -77,6 +79,7 @@ public class SortRelearn {
  }
 
     public static void main(String[] args) {
+       
         int[] arr = {9, 5, 8, 3, 7, 2};
 //        int[] out = insertSort(arr);
         int[] out = shellSort(arr);
