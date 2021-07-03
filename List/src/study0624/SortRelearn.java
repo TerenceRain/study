@@ -13,13 +13,12 @@ public class SortRelearn {
             for(; cur >= 0; cur--){
                 if(arr[cur] > v){
                     arr[cur + 1] = arr[cur];
-                }else{
-                    break;
                 }
             }
             arr[cur + 1] = v;
         }
         return arr;
+
     }
 
     public static int[] shellSort(int[] arr){
