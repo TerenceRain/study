@@ -61,13 +61,11 @@ public class SortRelearn {
 
  public static int[] bubbleSort(int[] arr){
      for (int i = 0; i < arr.length; i++) {
-         for (int j = arr.length - 1; j > i ; j--) {
+         for (int j = arr.length - 1; j > i; j--) {
              if(arr[j - 1] > arr[j]){
                  swap(arr, j - 1, j);
              }
-
          }
-
      }
      return arr;
  }
@@ -81,9 +79,9 @@ public class SortRelearn {
        
         int[] arr = {9, 5, 8, 3, 7, 2};
 //        int[] out = insertSort(arr);
-        int[] out = shellSort(arr);
+//        int[] out = shellSort(arr);
 //        int[] out = selectSort(arr);
-//        int[] out = bubbleSort(arr);
+        int[] out = bubbleSort(arr);
         System.out.println(Arrays.toString(out));
     }
 
