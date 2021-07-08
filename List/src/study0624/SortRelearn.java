@@ -79,33 +79,33 @@ public static int[] bubbleSort(int[] arr){
        _quickSort(arr, 0, arr.length - 1);
        return arr;
  }
- public static void _quickSort(int[] arr, int left, int right){
+
+    private static void _quickSort(int[] arr, int left, int right) {
        if(left >= right){
            return;
        }
-       int index = partition(arr, left, right);
-       _quickSort(arr, index + 1, right);
-       _quickSort(arr, left, index - 1);
- }
- public static int partition(int[] arr, int left, int right){
+        int index = partition(arr, left, right);
+        _quickSort(arr, index + 1, right);
+        _quickSort(arr, left, index - 1);
+    }
+    public static int partition(int[]arr, int left, int right){
        int i = left;
        int j = right;
        int indexElement = arr[left];
-       while(i < j){
+       while (i < j){
            while(i < j && arr[j] >= indexElement){
                j--;
            }
            while(i < j && arr[i] <= indexElement){
                i++;
            }
-           swap(arr, i , j);
+           swap(arr, i, j);
        }
        swap(arr, i, left);
        return i;
- }
+    }
 
-
- public static int[] mergeSort(int[] arr){
+    public static int[] mergeSort(int[] arr){
        _mergeSort(arr, 0, arr.length);
        return arr;
  }
@@ -151,8 +151,8 @@ public static int[] bubbleSort(int[] arr){
 //        int[] out = shellSort(arr);
 //        int[] out = selectSort(arr);
 //        int[] out = bubbleSort(arr);
-//        int[] out = quickSort(arr);
-        int[] out = mergeSort(arr);
+        int[] out = quickSort(arr);
+//        int[] out = mergeSort(arr);
         System.out.println(Arrays.toString(out));
     }
 
