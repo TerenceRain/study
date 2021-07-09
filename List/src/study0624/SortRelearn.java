@@ -151,8 +151,8 @@ public static int[] bubbleSort(int[] arr){
 //        int[] out = shellSort(arr);
 //        int[] out = selectSort(arr);
 //        int[] out = bubbleSort(arr);
-        int[] out = quickSort(arr);
-//        int[] out = mergeSort(arr);
+//        int[] out = quickSort(arr);
+        int[] out = mergeSort(arr);
         System.out.println(Arrays.toString(out));
     }
 
