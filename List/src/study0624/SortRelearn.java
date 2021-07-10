@@ -1,5 +1,6 @@
 package study0624;
 
+import javax.xml.crypto.Data;
 import java.util.Arrays;
 
 public class SortRelearn {
@@ -81,22 +82,23 @@ public static int[] bubbleSort(int[] arr){
  }
 
     private static void _quickSort(int[] arr, int left, int right) {
-       if(left >= right){
-           return;
-       }
+        if(left >= right){
+            return;
+        }
         int index = partition(arr, left, right);
-        _quickSort(arr, index + 1, right);
+        _quickSort(arr,  index + 1, right);
         _quickSort(arr, left, index - 1);
     }
-    public static int partition(int[]arr, int left, int right){
+
+    private static int partition(int[] arr, int left, int right){
        int i = left;
        int j = right;
        int indexElement = arr[left];
-       while (i < j){
+       while(i < j){
            while(i < j && arr[j] >= indexElement){
                j--;
            }
-           while(i < j && arr[i] <= indexElement){
+           while (i < j && arr[i] <= indexElement){
                i++;
            }
            swap(arr, i, j);
@@ -108,25 +110,25 @@ public static int[] bubbleSort(int[] arr){
     public static int[] mergeSort(int[] arr){
        _mergeSort(arr, 0, arr.length);
        return arr;
- }
- public static void _mergeSort(int[] arr, int left, int right){
+    }
+    public static void _mergeSort(int[] arr, int left, int right){
        if(right - left <= 1){
            return;
        }
-       int mid = (right + left) / 2;
+       int mid = (left + right) / 2;
        _mergeSort(arr, left, mid);
        _mergeSort(arr, mid, right);
        merge(arr, left, mid, right);
- }
- public static void merge(int[] arr, int left, int mid, int right){
+    }
+    public static void merge(int[] arr, int left, int mid, int right){
        if(left >= right){
            return;
        }
+       int tempIndex = 0;
        int[] temp = new int[right - left];
        int cur1 = left;
        int cur2 = mid;
-       int tempIndex = 0;
-       while (cur1 < mid && cur2 < right){
+       while(cur1 < mid && cur2 < right){
            if(arr[cur1] <= arr[cur2]){
                temp[tempIndex++] = arr[cur1++];
            }else{
@@ -134,17 +136,17 @@ public static int[] bubbleSort(int[] arr){
            }
        }
        while(cur1 < mid){
-           temp[tempIndex++] = arr[cur1++];
+           temp[tempIndex++] =arr[cur1++];
        }
        while(cur2 < right){
            temp[tempIndex++] = arr[cur2++];
        }
-     for (int i = 0; i < temp.length; i++) {
-         arr[left + i] = temp[i];
+        for (int i = 0; i < temp.length; i++) {
+            arr[left + i] = temp[i];
 
-     }
- }
-    public static void main(String[] args) {
+        }
+    }
+     public static void main(String[] args) {
        
         int[] arr = {9, 5, 8, 3, 7, 2};
 //        int[] out = insertSort(arr);
