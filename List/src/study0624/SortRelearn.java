@@ -25,21 +25,19 @@ public class SortRelearn {
        int gap = arr.length / 2;
        while(gap >= 1){
            _shellSort(arr, gap);
-           gap /= 2;
+           gap = gap / 2;
        }
        return arr;
     }
-
-
     public static void _shellSort(int[] arr, int gap){
        int bound = gap;
-       for(; bound < arr.length; bound++){
+       for(;  bound < arr.length; bound++){
            int v = arr[bound];
            int cur = bound - gap;
            for(; cur >= 0; cur -= gap){
                if(arr[cur] > v){
                    arr[cur + gap] = arr[cur];
-               }else{
+               }else {
                    break;
                }
            }
@@ -47,7 +45,7 @@ public class SortRelearn {
        }
     }
  public static int[] selectSort(int[] arr){
-       int bound  = 0;
+       int bound = 0;
        for(; bound < arr.length; bound++){
            int cur = bound + 1;
            for(; cur < arr.length; cur++){
@@ -151,10 +149,10 @@ public static int[] bubbleSort(int[] arr){
         int[] arr = {9, 5, 8, 3, 7, 2};
 //        int[] out = insertSort(arr);
 //        int[] out = shellSort(arr);
-//        int[] out = selectSort(arr);
+        int[] out = selectSort(arr);
 //        int[] out = bubbleSort(arr);
 //        int[] out = quickSort(arr);
-        int[] out = mergeSort(arr);
+//        int[] out = mergeSort(arr);
         System.out.println(Arrays.toString(out));
     }
 
