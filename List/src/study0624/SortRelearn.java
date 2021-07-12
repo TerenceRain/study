@@ -109,23 +109,21 @@ public static int[] bubbleSort(int[] arr){
        _mergeSort(arr, 0, arr.length);
        return arr;
     }
-    public static void _mergeSort(int[] arr, int left, int right){
-       if(right - left <= 1){
+   public static void _mergeSort(int[] arr, int left, int right){
+       if (right - left <= 1){
            return;
        }
        int mid = (left + right) / 2;
        _mergeSort(arr, left, mid);
        _mergeSort(arr, mid, right);
        merge(arr, left, mid, right);
-    }
-    public static void merge(int[] arr, int left, int mid, int right){
-       if(left >= right){
-           return;
-       }
-       int tempIndex = 0;
-       int[] temp = new int[right - left];
+   }
+   public static void merge(int[] arr, int left, int mid, int right){
+
        int cur1 = left;
        int cur2 = mid;
+       int[] temp = new int[right - left];
+       int tempIndex = 0;
        while(cur1 < mid && cur2 < right){
            if(arr[cur1] <= arr[cur2]){
                temp[tempIndex++] = arr[cur1++];
@@ -134,25 +132,25 @@ public static int[] bubbleSort(int[] arr){
            }
        }
        while(cur1 < mid){
-           temp[tempIndex++] =arr[cur1++];
+           temp[tempIndex++] = arr[cur1++];
        }
        while(cur2 < right){
            temp[tempIndex++] = arr[cur2++];
        }
-        for (int i = 0; i < temp.length; i++) {
-            arr[left + i] = temp[i];
+       for (int i = 0; i < temp.length; i++) {
+           arr[left + i] = temp[i];
 
-        }
-    }
+       }
+   }
      public static void main(String[] args) {
        
         int[] arr = {9, 5, 8, 3, 7, 2};
 //        int[] out = insertSort(arr);
 //        int[] out = shellSort(arr);
-        int[] out = selectSort(arr);
+//        int[] out = selectSort(arr);
 //        int[] out = bubbleSort(arr);
 //        int[] out = quickSort(arr);
-//        int[] out = mergeSort(arr);
+        int[] out = mergeSort(arr);
         System.out.println(Arrays.toString(out));
     }
 
