@@ -21,52 +21,56 @@ public class SortRelearn {
        return arr;
    }
 
-    public static int[] shellSort(int[] arr){
-       int gap = arr.length / 2;
-       while(gap >= 1){
-           _shellSort(arr, gap);
-           gap = gap / 2;
-       }
-       return arr;
-    }
-    public static void _shellSort(int[] arr, int gap){
+    public static int[] shellSort(int[] arr) {
+        int gap = arr.length / 2;
+        while(gap >= 1){
+            _shellSort(arr, gap);
+            gap /= 2;
+        }
+        return arr;
+   }
+   public static void _shellSort(int[] arr, int gap){
        int bound = gap;
-       for(;  bound < arr.length; bound++){
+       for(; bound < arr.length; bound++){
            int v = arr[bound];
            int cur = bound - gap;
            for(; cur >= 0; cur -= gap){
                if(arr[cur] > v){
                    arr[cur + gap] = arr[cur];
-               }else {
+               }else{
                    break;
                }
            }
            arr[cur + gap] = v;
        }
-    }
+   }
+
+
  public static int[] selectSort(int[] arr){
        int bound = 0;
        for(; bound < arr.length; bound++){
            int cur = bound + 1;
            for(; cur < arr.length; cur++){
                if(arr[cur] < arr[bound]){
-                   swap(arr, bound, cur);
+                   swap(arr, cur, bound);
                }
            }
+
        }
        return arr;
  }
 
 public static int[] bubbleSort(int[] arr){
-    for (int i = 0; i < arr.length; i++){
-        for (int j = arr.length - 1; j > i; j--) {
-            if(arr[j - 1] > arr[j]){
-                swap(arr, j - 1, j);
+    for (int i = 0; i < arr.length; i++) {
+        for(int j = i; j > 0; j--){
+            if(arr[j] < arr[j - 1]){
+                swap(arr, j, j - 1);
             }
-
         }
+
     }
     return arr;
+
 }
  public static void swap(int[] arr, int i, int j){
      int temp = arr[i];
@@ -74,21 +78,19 @@ public static int[] bubbleSort(int[] arr){
      arr[j] = temp;
  }
 
- public static int[] quickSort(int[] arr){
+public static int[] quickSort(int[] arr){
        _quickSort(arr, 0, arr.length - 1);
        return arr;
- }
-
-    private static void _quickSort(int[] arr, int left, int right) {
-        if(left >= right){
-            return;
-        }
-        int index = partition(arr, left, right);
-        _quickSort(arr,  index + 1, right);
-        _quickSort(arr, left, index - 1);
-    }
-
-    private static int partition(int[] arr, int left, int right){
+}
+public static void _quickSort(int[] arr, int left, int right){
+       if(left >= right){
+           return;
+       }
+       int index = partition(arr, left, right);
+       _quickSort(arr, left, index - 1);
+       _quickSort(arr, index + 1, right);
+}
+public static int partition(int[] arr, int left, int right){
        int i = left;
        int j = right;
        int indexElement = arr[left];
@@ -96,15 +98,14 @@ public static int[] bubbleSort(int[] arr){
            while(i < j && arr[j] >= indexElement){
                j--;
            }
-           while (i < j && arr[i] <= indexElement){
+           while(i < j && arr[i] <= indexElement){
                i++;
            }
            swap(arr, i, j);
        }
        swap(arr, i, left);
        return i;
-    }
-
+}
     public static int[] mergeSort(int[] arr){
        _mergeSort(arr, 0, arr.length);
        return arr;
@@ -149,8 +150,8 @@ public static int[] bubbleSort(int[] arr){
 //        int[] out = shellSort(arr);
 //        int[] out = selectSort(arr);
 //        int[] out = bubbleSort(arr);
-//        int[] out = quickSort(arr);
-        int[] out = mergeSort(arr);
+        int[] out = quickSort(arr);
+//        int[] out = mergeSort(arr);
         System.out.println(Arrays.toString(out));
     }
 
